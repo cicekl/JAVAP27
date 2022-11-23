@@ -28,3 +28,11 @@ create table sticenik(
 alter table sticenik add foreign key(osoba) references osoba(sifra);
 alter table prostor add foreign key(sticenik) references sticenik(sifra);
 
+insert into osoba(ime,prezime,sifra) values('Marica','Maric',null);
+insert into osoba(ime,prezime,sifra) values('Fran','Franic',null);
+
+insert into prostor(sifra,zivotinja,rednibroj,sticenik) values(null,'pas',23,3);
+insert into prostor(sifra,zivotinja,rednibroj,sticenik) values(null,'macka',14,2);
+
+insert into sticenik(pasmina,ime,sifra,osoba) values('labrador','Blacky',null,1);
+insert into sticenik(pasmina,ime,sifra,osoba) values('sijamska macka','Yuno',null,2);
