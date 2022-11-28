@@ -140,3 +140,95 @@ datumpocetka='2022-11-07 17:00:00'
 where sifra=1;
 
 delete from smjer where sifra=3;
+
+# do sada radili
+select * from smjer;
+#minimalni oblik select naredbe
+select 1;
+
+#filtriranje kolona
+select sifra,naziv from smjer;
+#1. nazivi kolona odvojeni zarezom
+select sifra,naziv,sifra from smjer;
+
+#2. * sve kolone
+select*,naziv from smjer;
+
+#3. konstanta
+select naziv, 'Osijek' from smjer;
+#zamjensko ime kolone
+select naziv, 'Osijek' as mjesto from smjer;
+
+#4. izraz
+select naziv,
+length(naziv) as duzina from smjer;
+
+#ispisite imena i prezimena osoba
+
+select ime,prezime from osoba;
+
+#FILTRIRANJE REDOVA
+select * from osoba;
+
+select * from osoba where sifra=1;
+
+#operatori (=,<,>,<=,>=,!=) usporedivanja
+
+select * from osoba
+where sifra<=5;
+
+select * from osoba where ime='Kristijan';
+
+#logicki operatori (not,and,or,xor)
+
+select * from osoba 
+where ime='Kristijan' and prezime='Vidaković';
+
+select * from osoba 
+where ime='Kristijan' or ime='Karlo';
+
+select * from osoba where not (ime='Kristijan');
+
+select * from osoba where (ime='Kristijan' and sifra<10) or 
+(sifra>=12 and ime='Ivan');
+
+#ostali operatori (like, between)
+select * from osoba where ime like 'K%'; #prvo K pa sve ostalo, sva imena na K
+
+select * from osoba where prezime like 'K%';
+
+#sve zenske osobe
+select * from osoba 
+where ime like '%a';
+
+#sve osobe koje sadrze u prezimenu nt
+select * from osoba 
+where prezime like '%vid%';
+
+#unijeti tri nove grupe, svaka u različitoj godini (2019,2020,2021);
+
+insert into grupa(sifra,naziv,datumpocetka) values(null,'JP26', '2021-11-7');
+
+insert into grupa(sifra,naziv,datumpocetka) values(null,'JP25', '2020-11-7');
+
+insert into grupa(sifra,naziv,datumpocetka) values(null,'JP24', '2019-11-7');
+
+
+select * from grupa where datumpocetka>'2020-01-01';
+
+select * from grupa where datumpocetka between '2020-01-01' and '2020-12-31';
+
+
+select * from osoba 
+where sifra between 3 and 9;
+
+#izlistajte sve grupe kojima se ne zna predavac
+
+select * from grupa where predavac is null;
+
+#unesite novog predavaca
+
+insert into osoba(sifra,ime,prezime,email) values(null,'Shaquille','ONeal','shaki@gmail.com');
+
+insert into predavac (sifra,osoba) values(null,16);
+
