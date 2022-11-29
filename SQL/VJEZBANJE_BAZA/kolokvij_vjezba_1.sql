@@ -1,4 +1,4 @@
-drop database is exists obitelj;
+drop database if exists obitelj;
 create database obitelj;
 use obitelj;
 
@@ -69,7 +69,7 @@ create table muskarac(
     asocijalno bit null,
     ekstrovertno bit not null,
     dukserica varchar(48) not null,
-    muskarac int null
+    zena int null
 );
 
 create table mladic(
