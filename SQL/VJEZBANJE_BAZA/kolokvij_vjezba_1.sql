@@ -106,3 +106,10 @@ insert into svekar(sifra,bojaociju) values(null,'zuta');
 insert into sestra_svekar(sifra,sestra,svekar) values(null,2,1);
 insert into sestra_svekar(sifra,sestra,svekar) values(null,1,3);
 insert into sestra_svekar(sifra,sestra,svekar) values(null,3,2);
+
+insert into cura(sifra,novcica,gustoca,ogrlica) values(null,213.5,12.4,2);
+insert into cura(sifra,novcica,gustoca,ogrlica) values(null,43443.3,1.345,1);
+insert into cura(sifra,novcica,gustoca,ogrlica) values(null,19.99,34.6,5);
+
+update cura set gustoca=15.77
+where sifra in (1,2,3);
