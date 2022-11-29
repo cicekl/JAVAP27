@@ -63,13 +63,11 @@ create table zena(
 
 create table muskarac(
     sifra int not null primary key auto_increment,
-    suknja varchar(50) not null,
-    kuna decimal(16,8) not null,
-    drugiputa datetime null,
-    asocijalno bit null,
-    ekstrovertno bit not null,
-    dukserica varchar(48) not null,
-    zena int null
+    bojaociju varchar(50) not null,
+    hlace varchar(30) null,
+    modelnaocala varchar(43) null,
+    maraka decimal(14,5) not null,
+    zena int not null
 );
 
 create table mladic(
@@ -87,9 +85,6 @@ alter table zena add foreign key(sestra) references sestra(sifra);
 alter table muskarac add foreign key(zena) references zena(sifra);
 alter table mladic add foreign key(muskarac) references muskarac(sifra);
 
-insert into muskarac(sifra,suknja,kuna,ekstrovertno,dukserica) values (null,'zelena',1345.479,1,'plava');
-insert into muskarac(sifra,suknja,kuna,ekstrovertno,dukserica) values (null,'crvena',4398.4569,0,'roza');
-insert into muskarac(sifra,suknja,kuna,ekstrovertno,dukserica) values (null,'zuta',43533.22,1,'zelena');
 
 insert into sestra(sifra,haljina,hlace,narukvica) values(null,'roza','crne',1);
 insert into sestra(sifra,haljina,hlace,narukvica) values(null,'crvena','plave',4);
@@ -98,6 +93,10 @@ insert into sestra(sifra,haljina,hlace,narukvica) values(null,'crna','crne',3);
 insert into zena(sifra,kratkamajica,jmbag,bojaociju,sestra) values (null,'smedja','12345678910','zelena',3);
 insert into zena(sifra,kratkamajica,jmbag,bojaociju,sestra) values (null,'smedja','12345678910','zelena',1);
 insert into zena(sifra,kratkamajica,jmbag,bojaociju,sestra) values (null,'smedja','12345678910','zelena',2);
+
+insert into muskarac(sifra,bojaociju,hlace,maraka,zena) values (null,'zelena','plave',134.65,1);
+insert into muskarac(sifra,bojaociju,hlace,maraka,zena) values (null,'plava','crne',324.65,2);
+insert into muskarac(sifra,bojaociju,hlace,maraka,zena) values (null,'zelena','smedje',19.4,3);
 
 insert into svekar(sifra,bojaociju) values(null,'plava');
 insert into svekar(sifra,bojaociju) values(null,'zelena');
@@ -119,3 +118,16 @@ insert into mladic(sifra,suknja,kuna,ekstrovertno,dukserica) values(null,'roza',
 insert into mladic(sifra,suknja,kuna,ekstrovertno,dukserica) values(null,'plava',34.65,0,'zlatna');
 
 delete from mladic where kuna>15.78;
+
+select kratkamajica from zena 
+where hlace like '%ana%';
+
+select a.dukserica, f.asocijalno, e.hlace
+from svekar a 
+inner join sestra_svekar b on a.sifra=b.svekar
+inner join sestra c on b.sestra=c.sifra
+inner join zena d on c.sifra=d.sestra
+inner join muskarac e on d.sifra=e.zena
+inner join mladic f on e.sifra=f.muskarac
+where (d.hlace like 'a%' and c.haljina like '%ba%');
+
