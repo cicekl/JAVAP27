@@ -113,3 +113,9 @@ insert into cura(sifra,novcica,gustoca,ogrlica) values(null,19.99,34.6,5);
 
 update cura set gustoca=15.77
 where sifra in (1,2,3);
+
+insert into mladic(sifra,suknja,kuna,ekstrovertno,dukserica) values(null,'crvena',135.665,1,'crna');
+insert into mladic(sifra,suknja,kuna,ekstrovertno,dukserica) values(null,'roza',12.56,1,'zelena');
+insert into mladic(sifra,suknja,kuna,ekstrovertno,dukserica) values(null,'plava',34.65,0,'zlatna');
+
+delete from mladic where kuna>15.78;
