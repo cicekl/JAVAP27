@@ -116,6 +116,6 @@ from prijatelj a
 left join prijatelj_brat b on a.sifra=b.prijatelj
 where a.sifra=null;
 
-
+--35 minuta
 
 
