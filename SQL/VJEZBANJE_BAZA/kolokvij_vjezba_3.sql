@@ -93,7 +93,7 @@ values(1,1),(5,0),(34,1);
 insert into prijatelj_brat(prijatelj,brat)
 values(1,1),(2,3),(3,2);
 
-update svekar set suknja='Osijek';
+update svekar set suknja='Osijek'
 where sifra is not null;
 
 delete from punica where kratkamajica='AB';
