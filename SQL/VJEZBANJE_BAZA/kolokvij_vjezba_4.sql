@@ -75,3 +75,42 @@ alter table prijatelj add foreign key(becar) references becar(sifra);
 alter table zena_mladic add foreign key(zena) references zena(sifra);
 alter table zena_mladic add foreign key(mladic) references mladic(sifra);
 
+--becar,snasa,zena_mladic
+insert into zena(suknja,prstena)
+values('da',1),('ne',5),('da',3);
+
+insert into snasa(haljina,zena)
+values('crvena',1),('plava',2),('crna',3);
+
+insert into becar(kratkamajica,bojaociju,snasa)
+values('da','plava',1),('da','smedja',2),('ne','zelena',3);
+
+insert into mladic(vesta)
+values('zelena'),('smedja'),('zlatna');
+
+insert into zena_mladic(zena,mladic)
+values(1,2),(2,3),(3,1);
+
+update punac set majica='Osijek'
+where sifra is not null;
+
+delete from prijatelj 
+where prsten>17;
+
+select haljina from snasa
+where treciputa is null;
+
+select a.nausnica, f.jmbag, e.kratkamajica
+from mladic a 
+inner join zena_mladic b on a.sifra=b.mladic
+inner join zena c on b.zena=c.sifra
+inner join snasa d on c.sifra=d.zena
+inner join becar e on d.sifra=e.snasa
+inner join prijatelj f on e.sifra=f.becar
+where d.treciputa is not null and c.lipa!=29
+order by e.kratkamajica desc;
+
+select 
+from zena a
+left join zena_mladic b on a.sifra=b.zena
+where b.zena is null; 
