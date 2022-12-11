@@ -44,11 +44,11 @@ create table prijatelj(
     gustoca decimal(16,5) null,
     jmbag char(11) not null,
     suknja varchar(47) not null,
-    besar int not null
+    becar int not null
 );
 
 create table zena(
-    sfira int not null primary key auto_increment,
+    sifra int not null primary key auto_increment,
     suknja varchar(39) not null,
     lipa decimal(18,7) null,
     prstena int not null
@@ -95,7 +95,7 @@ update punac set majica='Osijek'
 where sifra is not null;
 
 delete from prijatelj 
-where prsten>17;
+where prstena>17;
 
 select haljina from snasa
 where treciputa is null;
@@ -110,7 +110,7 @@ inner join prijatelj f on e.sifra=f.becar
 where d.treciputa is not null and c.lipa!=29
 order by e.kratkamajica desc;
 
-select 
+select a.lipa, a.prstena
 from zena a
 left join zena_mladic b on a.sifra=b.zena
 where b.zena is null; 
