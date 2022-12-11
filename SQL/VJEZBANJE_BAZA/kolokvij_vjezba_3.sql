@@ -76,4 +76,46 @@ alter table punica add foreign key(snasa) references snasa(sifra);
 alter table ostavljena add foreign key(prijatelj) references prijatelj(sifra);
 alter table prijatelj_brat add foreign key(prijatelj) references prijatelj(sifra);
 alter table prijatelj_brat add foreign key(brat) references brat(sifra);
+alter table snasa add foreign key(ostavljena) references ostavljena(sifra);
+
+--snasa, ostavljena, prijatelj_brat - 3 retka
+insert into ostavljena(modelnaocala) 
+values('Calvin Klein'),('Chloe'),('Boss');
+
+insert into snasa(kuna,eura,ostavljena)
+values(14215.43,131.4,1),(5665.5,456.4,2),(324.4,32345.565,3);
+
+insert into prijatelj(indiferentno) values(1),(1),(0);
+
+insert into brat(ogrlica,ekstrovertno) 
+values(1,1),(5,0),(34,1);
+
+insert into prijatelj_brat(prijatelj,brat)
+values(1,1),(2,3),(3,2);
+
+update svekar set suknja='Osijek';
+where sifra is not null;
+
+delete from punica where kratkamajica='AB';
+
+select majica from ostavljena 
+where (lipa!=9 and lipa!=10 and lipa!=20 and lipa!=30 and lipa!=35);
+
+select a.ekstrovertno, f.vesta, e.kuna
+from brat a
+inner join prijatelj_brat b on a.sifra=b.brat
+inner join prijatelj c on b.prijatelj=c.sifra
+inner join ostavljena d on c.sifra=d.prijatelj
+inner join snasa e on d.sifra=e.ostavljena
+inner join punica f on e.sifra=f.snasa
+where d.lipa!=91 and c.haljina like '%ba'
+order by e.kuna desc;
+
+select a.haljina, a.lipa
+from prijatelj a
+left join prijatelj_brat b on a.sifra=b.prijatelj
+where a.sifra=null;
+
+
+
 
