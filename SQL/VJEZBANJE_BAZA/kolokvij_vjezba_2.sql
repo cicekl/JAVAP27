@@ -113,6 +113,6 @@ order by e.haljina desc;
 select a.vesta, a.asocijalno
 from decko a
 left join decko_zarucnica b on a.sifra=b.decko
-where b.sifra is null;
+where b.decko is null;
 
 --38 minuta 
