@@ -114,3 +114,5 @@ select a.lipa, a.prstena
 from zena a
 left join zena_mladic b on a.sifra=b.zena
 where b.zena is null; 
+
+--33 minute
