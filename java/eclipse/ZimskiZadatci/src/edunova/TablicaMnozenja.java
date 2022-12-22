@@ -18,6 +18,22 @@ public class TablicaMnozenja {
 	
 		
 		int i,j;
+	
+		for(i=0;i<31;i++) {
+			System.out.print("-");
+		}
+		
+		System.out.println("\n: : :  TABLICA  MNOZENJA  : : :");
+		
+		for(i=0;i<31;i++) {
+			System.out.print("-");
+		}
+		
+		System.out.print("\n * "  + "|  " + "1  2  3  4  5  6  7  8  9\n");;
+		
+		for(i=0;i<31;i++) {
+			System.out.print("-");
+		}
 		
 		for(i=0;i<9;i++) {
 			System.out.print("\n " + (i+1) + " " + "|  ");
@@ -61,6 +77,18 @@ public class TablicaMnozenja {
 		}
 		
 	}
+		System.out.println();
+		
+		for(i=0;i<31;i++) {
+			System.out.print("-");
+		}
 		
 	
+		System.out.println("\n:  :  :  :  :  :  :  :by Lorena");
+		
+		for(i=0;i<31;i++) {
+			System.out.print("-");
+		}
+		
+		
 } }
