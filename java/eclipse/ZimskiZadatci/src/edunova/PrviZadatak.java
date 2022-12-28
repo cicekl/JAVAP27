@@ -37,6 +37,7 @@ public class PrviZadatak {
 		System.out.println("Minimalni broj je: " + min);
 		System.out.println("Maksimalni broj je: " + max); 
 		
+		}
 	}
 
-}
+
