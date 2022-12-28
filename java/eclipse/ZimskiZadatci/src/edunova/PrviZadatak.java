@@ -12,7 +12,7 @@ public class PrviZadatak {
 		int zbroj=0;
 		
 		for(i=0;i<24;i++) {
-			brojevi[i]=Integer.parseInt(JOptionPane.showInputDialog("Unesi broj"));
+			brojevi[i]=Integer.parseInt(JOptionPane.showInputDialog("Unesi broj:"));
 		}
 		
 		int min=brojevi[0];
