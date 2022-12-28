@@ -21,7 +21,6 @@ public class DrugiZadatak {
 			System.out.print(i * j + " ");
 		}
 		
-		
 		}
 		
 		System.out.println();
