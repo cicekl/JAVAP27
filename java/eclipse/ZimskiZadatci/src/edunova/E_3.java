@@ -8,34 +8,31 @@ public class E_3 {
 		//What is the largest prime factor of the number 600851475143 ?
 		
 		long broj = 600851475143L;
-		int i, j;
-		int spremnik1[] = new int [71];
-		int spremnik2[] = new int [71];
+		int i,j;
+		int max=0;
 		
-		for(i=2;i<=600851475143L;i++) {
-			if (broj%i==0) {
-				spremnik1[i] = (int) broj%i;
-			}
+		for(i=2;i<=broj;i++) {
+			int zastavica = 1;
 			
-			for(j=2;j<=i/2;j++) {
+			for(j=2;j<i;j++) {
 				if(i%j==0) {
-					spremnik2[j]= i%j;
-					break;
+					zastavica=0;
 				}
 			}
 			
-			
-		}
-		
-		int max=-1;
-		
-		for(i=0;i<100;i++) {
-			if(spremnik1[i]<spremnik2[i]) {
-				max=spremnik1[i];
-			}else {
-				max=spremnik2[i];
+			if(broj%i==0) {
+				
+				if(zastavica==1) {
+					if(i>max) {
+						max=i;
+					}
+//					System.out.println(max);
+					broj=broj/i;
+				}
 			}
 		}
+		
+		System.out.println(max);
 		
 		
 
