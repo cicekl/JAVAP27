@@ -7,7 +7,9 @@ public class E_34 {
 		//Find the sum of all numbers which are equal to the sum of the factorial of their digits.
 		//Note: As 1! = 1 and 2! = 2 are not sums they are not included.
 
-
+		int i,j;
+		int faktorijel;
+		
 		
 
 
