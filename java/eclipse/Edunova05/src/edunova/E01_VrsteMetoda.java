@@ -13,7 +13,7 @@ public class E01_VrsteMetoda {
 	//1. vrsta
 	//ne prima parametre, ne vraća vrijednost(nema return)
 	
-	public static void pozdravi() {
+	public static void m1_pozdravi() {
 		
 		//lista parametara prazna - ne prima vrijednost
 		
@@ -26,7 +26,7 @@ public class E01_VrsteMetoda {
 	//2. vrsta
 	//ne prima parametre, vraća vrijednost
 	
-	public static int slucajniBroj() {
+	public static int m2_slucajniBroj() {
 		int sb = (int) (Math.random()*100);
 		return sb;
 		
@@ -36,7 +36,7 @@ public class E01_VrsteMetoda {
 	//3. vrsta
 	//prima parametre, ne vraća vrijednost
 	
-	public static void zbroji(int a, int b, int c) {
+	public static void m3_zbroji(int a, int b, int c) {
 		
 		int r= a + b;
 		float f = r/c;
@@ -46,14 +46,16 @@ public class E01_VrsteMetoda {
 	//4. vrsta
 	//prima parametre i vraća vrijednost
 	
-	public static boolean prim(int broj) {
+	public static boolean m4_prim(int broj) {
 		//djeljiv s 1 i sam sa sobom
 		
 		for(int i=2; i<broj;i++) {
 			if(broj%i==0) {
 				return false; //short cuircuting
 			}
-			else return true;
+			else { 
+				return true;
+			}
 		}
 	}
 	
