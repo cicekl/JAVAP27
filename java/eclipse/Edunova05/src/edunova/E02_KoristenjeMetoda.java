@@ -20,6 +20,8 @@ public class E02_KoristenjeMetoda {
 		
 		System.out.println(Z01.najveciBroj(2, 20, 5));
 		
+		System.out.println(Z05.zbrojDecimalnihVrijednosti(2.78, 0.30));
+		
 	}
 	
 	
