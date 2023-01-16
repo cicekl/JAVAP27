@@ -16,7 +16,9 @@ public class E02_KoristenjeMetoda {
 		
 		E01_VrsteMetoda.m3_zbroji(2, 4, 5);
 		
-		System.out.println(E01_VrsteMetoda.m4_prim(0));
+//		System.out.println(E01_VrsteMetoda.m4_prim(0));
+		
+		System.out.println(Z01.najveciBroj(2, 20, 5));
 		
 	}
 	
