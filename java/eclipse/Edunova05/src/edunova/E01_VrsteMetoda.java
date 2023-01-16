@@ -46,18 +46,18 @@ public class E01_VrsteMetoda {
 	//4. vrsta
 	//prima parametre i vraća vrijednost
 	
-	public static boolean m4_prim(int broj) {
-		//djeljiv s 1 i sam sa sobom
-		
-		for(int i=2; i<broj;i++) {
-			if(broj%i==0) {
-				return false; //short cuircuting
-			}
-			else { 
-				return true;
-			}
-		}
-	}
+//	public static boolean m4_prim(int broj) {
+//		//djeljiv s 1 i sam sa sobom
+//		
+//		for(int i=2; i<broj;i++) {
+//			if(broj%i==0) {
+//				return false; //short cuircuting
+//			}
+//			else { 
+//				return true;
+//			}
+//		}
+//	}
 	
 	
 	
