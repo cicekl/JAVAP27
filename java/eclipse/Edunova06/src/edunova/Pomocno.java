@@ -18,5 +18,18 @@ public class Pomocno {
 		public static int ucitajCijeliBroj() {
 			return ucitajCijeliBroj("Unesi broj.", "Greška kod unosa broja! Pokušaj ponovno.");
 		} 
+		
+		public static String obavezanUnosStringa(String poruka) {
+			String s = "";
+			while (s.isEmpty()) {
+				s = JOptionPane.showInputDialog(poruka);
+				if (s.length() > 0) {
+					return s;
+				}
+			}
+			return "";
+		}
+		
+		
 	}
 
