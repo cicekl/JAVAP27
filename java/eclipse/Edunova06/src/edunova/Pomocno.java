@@ -16,7 +16,7 @@ public class Pomocno {
 		} }
 		
 		public static int ucitajCijeliBroj() {
-			return ucitajCijeliBroj("Unesi broj", "Greška kod unosa broj");
+			return ucitajCijeliBroj("Unesi broj.", "Greška kod unosa broja! Pokušaj ponovno.");
 		} 
 	}
 
