@@ -62,6 +62,12 @@ public class Pomocno {
 			}
 		}
 		
+
+		public static int slucajniBrojUrasponu(int min, int max) {
+			return (int) ((Math.random() * (max - min)) + min);
+		}
+
+		
 		
 }
 
