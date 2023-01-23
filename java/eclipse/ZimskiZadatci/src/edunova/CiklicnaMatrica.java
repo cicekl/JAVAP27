@@ -6,21 +6,22 @@ public class CiklicnaMatrica {
 
 	public static void main(String[] args) {
 
-		int n = Integer.parseInt(JOptionPane.showInputDialog("Unesi jedan broj"));
+		int m = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj redaka:"));
+		int n = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj stupaca:"));
 
-		int matrica[][] = new int[n][n];
-		int maxR = n - 1;
+		int matrica[][] = new int[m][n];
+		int maxR = m - 1;
 		int minR = 0;
 		int minS = 0;
 		int maxS = n - 1;
 		int vrijednost = 1;
 		int i,j;
 		
-		if(vrijednost<=n*n) {
-			for(j=maxS;j>=minS;j--) {
-				matrica[maxR][j] = vrijednost++;
+		if(minR<maxR && minS<maxS) {
+			for(i=maxS;i>=minS;i--) {
+				matrica[maxR][i] = vrijednost++;
 				
-				if(vrijednost>n*n) 
+				if(minR>maxR) 
 					break;
 			} 
 			maxR--;
@@ -29,16 +30,16 @@ public class CiklicnaMatrica {
 			for(i=maxR;i>=minR;i--) {
 				matrica[i][minS] = vrijednost++;
 				
-				if(vrijednost>n*n) 
+				if(minS>maxS) 
 					break;
 			}
 			minS++;
 			
 			
-			for(j=minS; j<=maxS;j++) {
-				matrica[minR][j] = vrijednost++;
+			for(i=minS; i<=maxS;i++) {
+				matrica[minR][i] = vrijednost++;
 				
-				if(vrijednost>n*n) 
+				if(minR>maxR) 
 					break;
 			}
 			minR++;
@@ -51,7 +52,7 @@ public class CiklicnaMatrica {
 			
 		}
 		
-		for(i=0;i<n;i++) {
+		for(i=0;i<m;i++) {
 			for(j=0;j<n;j++) {
 				System.out.print(matrica[i][j] + " ");
 			}
