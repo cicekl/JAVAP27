@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Lorena
- *
- */
-module Osoba {
-}
