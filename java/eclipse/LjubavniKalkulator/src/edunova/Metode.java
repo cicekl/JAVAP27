@@ -44,27 +44,42 @@ public class Metode {
 		return brojac;
 	}
 	
-	public static int[] zbrajanjeBrojeva(int duljinaPolja, int polje[]) {
-		int i=0;
-		int brojac=0;
-		int duljina=0;
-		int poljeZbroja [] = new int [duljinaPolja];
-		for(i=0;i<duljinaPolja;i++) {
-			duljina=duljinaPolja;
-			poljeZbroja[i]=polje[i]+polje[--duljina];
-				if(polje[i]==duljina) {
-					poljeZbroja[i]=polje[i];
-					brojac++;
-					return zbrajanjeBrojeva(brojac, poljeZbroja);	
-				}
-				
-			brojac++;
-		} 
-			if(poljeZbroja.length==2) {
-				return poljeZbroja;
-			}
-		return zbrajanjeBrojeva(brojac, poljeZbroja);	
+	
+	public static int zbrajanjeBrojeva(int duljinaPolja, int polje[]) {
+	    if (duljinaPolja == 2) {
+	        for (int i = 0; i < duljinaPolja; i++) {
+	            System.out.print(polje[i] + " ");
+	        }
+	        return duljinaPolja;
+	    }
+
+	    int brojac = 0;
+	    if (duljinaPolja % 2 != 0) {
+	        duljinaPolja = ((int) duljinaPolja / 2) + 1;
+	    } else {
+	        duljinaPolja = duljinaPolja / 2;
+	    }
+	    int novoPolje[] = new int[duljinaPolja];
+	    int j = duljinaPolja-1;
+	    for (int i = 0; i < duljinaPolja; i++) {
+	    	novoPolje[i] = polje[i] + polje[j];
+	        j--;
+	        if (novoPolje[i] >= 10) {
+	            novoPolje[i] = (int) (novoPolje[i] / 10);
+	            novoPolje[i + 1] = novoPolje[i] % 10;
+	            i++;
+	            brojac += 2;
+	            continue;
+	       
+	        }
+	        brojac++;
+	    }
+	    return zbrajanjeBrojeva(brojac, novoPolje);
 	}
+	
+//	public static void ispisKalkulatora(int[] polje) {
+//		System.out.println(polje[0]+polje[1]);
+//	}
 	
 	
 	
