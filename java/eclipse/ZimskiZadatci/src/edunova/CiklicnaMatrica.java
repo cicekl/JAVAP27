@@ -17,30 +17,21 @@ public class CiklicnaMatrica {
 		int vrijednost = 1;
 		int i,j;
 		
-		if(minR<maxR && minS<maxS) {
+		while(minR <= maxR && minS <= maxS) {
 			for(i=maxS;i>=minS;i--) {
 				matrica[maxR][i] = vrijednost++;
-				
-				if(minR>maxR) 
-					break;
 			} 
 			maxR--;
 			
 			
 			for(i=maxR;i>=minR;i--) {
 				matrica[i][minS] = vrijednost++;
-				
-				if(minS>maxS) 
-					break;
 			}
 			minS++;
 			
 			
 			for(i=minS; i<=maxS;i++) {
 				matrica[minR][i] = vrijednost++;
-				
-				if(minR>maxR) 
-					break;
 			}
 			minR++;
 			
@@ -48,13 +39,12 @@ public class CiklicnaMatrica {
 				matrica[i][maxS]= vrijednost++;
 			}
 			maxS--;
-				
-			
+					
 		}
 		
 		for(i=0;i<m;i++) {
 			for(j=0;j<n;j++) {
-				System.out.print(matrica[i][j] + " ");
+				System.out.printf("%4d", matrica[i][j]);
 			}
 			System.out.println();
 		}
