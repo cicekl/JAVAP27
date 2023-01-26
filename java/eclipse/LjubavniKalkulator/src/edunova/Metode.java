@@ -77,9 +77,7 @@ public class Metode {
 	    return zbrajanjeBrojeva(brojac, novoPolje);
 	}
 	
-//	public static void ispisKalkulatora(int[] polje) {
-//		System.out.println(polje[0]+polje[1]);
-//	}
+
 	
 	
 	
