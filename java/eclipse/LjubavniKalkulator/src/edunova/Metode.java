@@ -51,45 +51,8 @@ public class Metode {
 	}
 	
 	
-	/* public static int zbrajanjeBrojeva(int duljinaPolja, int polje[]) {
-	    if (duljinaPolja == 2) {
-	        return polje[0] + polje[1];
-	    }
-
-	    int brojac = 0;
-	    int novoPolje[] = null;
-	    if (duljinaPolja % 2 == 0) {
-	        duljinaPolja = duljinaPolja / 2;
-	        novoPolje = new int[duljinaPolja];
-	    } else {
-	        duljinaPolja = (duljinaPolja + 1) / 2;
-	        novoPolje = new int[duljinaPolja];
-	        novoPolje[duljinaPolja - 1] = polje[polje.length - 1];
-	    }
-	    int j = polje.length - 1;
-	    for (int i = 0; i < duljinaPolja; i++) {
-	        novoPolje[i] = polje[i] + polje[j];
-	        j = j - 2;
-	        if (novoPolje[i] >= 10) {
-	            int tempPolje[] = new int[duljinaPolja + 1];
-	            for (int k = 0; k < duljinaPolja; k++) {
-	                tempPolje[k] = novoPolje[k];
-	            }
-	            novoPolje = tempPolje;
-	            novoPolje[i] = (int) (novoPolje[i] / 10);
-	            novoPolje[i + 1] = novoPolje[i] % 10;
-	            i++;
-	            brojac += 2;
-	            continue;
-	        }
-	        brojac++;
-	    }
-	    return zbrajanjeBrojeva(novoPolje.length, novoPolje);
-	}
 	
-} */
-	
-	public static Object zbrajanjeBrojeva(int duljinaPolja, int[] polje) {
+	/* public static Object zbrajanjeBrojeva(int duljinaPolja, int[] polje) {
 	    if (duljinaPolja == 2) {
 	        int sum = polje[0] + polje[1];
 	        if (sum >= 10) {
@@ -125,7 +88,11 @@ public class Metode {
 	        j = j - 2;
 	    }
 	    return zbrajanjeBrojeva(novoPolje.length, novoPolje);
-	} }
+	} */
+	
+
+
+}
 	
 
 	

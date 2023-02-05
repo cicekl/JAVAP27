@@ -13,12 +13,11 @@ public class LjubavniKalkulator {
 		int prviRed [] = new int[brojac];
 		
 		int i, index=0;
-		
 		for(i=0;i<imena.length();i++) {
 			prviRed[i]=Metode.brojacSlova(imena, i);
 		}
-		Object broj=Metode.zbrajanjeBrojeva(brojac, prviRed);
-		System.out.println(broj);
+	//	Object broj=Metode.zbrajanjeBrojeva(brojac, prviRed);
+		// System.out.println(broj);
 		
 	}
 
