@@ -6,18 +6,20 @@ public class LjubavniKalkulator {
 		
 		String prvoIme = Metode.unosImena("Unesi prvo ime:");
 		String drugoIme = Metode.unosImena("Unesi drugo ime:");
-		String imena = prvoIme.toUpperCase()+drugoIme.toUpperCase();
-
-		int brojac=imena.length();
 		
-		int prviRed [] = new int[brojac];
+		String postotak = "";
 		
-		int i, index=0;
-		for(i=0;i<imena.length();i++) {
-			prviRed[i]=Metode.brojacSlova(imena, i);
+		for(int i: Metode.ljubavniKalkulator(Metode.zbrajanjeBrojeva(prvoIme, drugoIme))) {
+			postotak+=i;
 		}
-	//	Object broj=Metode.zbrajanjeBrojeva(brojac, prviRed);
-		// System.out.println(broj);
+		System.out.println(prvoIme + " i " + drugoIme + " se vole " + postotak + "%.");
+
+		
+		
+		
+		
+	
+	
 		
 	}
 

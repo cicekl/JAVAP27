@@ -50,46 +50,120 @@ public class Metode {
 		return brojac;
 	}
 	
+	public static int[] znamenke(int[] polje) {
+		int counter = 0;
+		for (int i: polje) {
+			if(i>=10) {
+				counter++;
+			}
+		}
+		
+		int[] pomocnoPolje = new int[polje.length + counter];
+		int index=0;
+		
+		int i;
+		for(i=0;i<polje.length;i++) {
+			if(polje[i]<10) {
+				pomocnoPolje[index++] = polje[i];
+			}else {
+				pomocnoPolje[index++] = polje[i]/10;
+				pomocnoPolje[index++] = polje[i]%10;
+			}
+		}
+		
+		return pomocnoPolje;
+		
+	}
 	
 	
-	/* public static Object zbrajanjeBrojeva(int duljinaPolja, int[] polje) {
-	    if (duljinaPolja == 2) {
-	        int sum = polje[0] + polje[1];
-	        if (sum >= 10) {
-	            int[] result = {sum / 10, sum % 10};
-	            return result;
-	        } else {
-	            return sum;
-	        }
-	    }
+	 public static int[] zbrajanjeBrojeva(String prvoIme, String drugoIme) {
+	  
+	String imena = prvoIme+drugoIme;
+	int counter=0;
+	char spojenaImena[] = (imena.toUpperCase().toCharArray());
+	int pomocnoPolje[] = new int[imena.length()];
+	
+	int i=0, j=0;
+	
+	for(i=0;i<imena.length();i++) {
+		counter=0;
+			for(j=0;j<imena.length();j++) {
+				if(spojenaImena[i]==spojenaImena[j]) {
+					counter++;
+				}
+			}
+			pomocnoPolje[i]=counter;
+	}
+	
+	int manji=0,veci=0;
+	if(prvoIme.length()>drugoIme.length()) {
+		veci = prvoIme.length();
+		manji = drugoIme.length();
+	}else {
+		veci = drugoIme.length();
+		manji = prvoIme.length();
+	}
+	
+	int pomPolje[]=new int[veci];
+	
+	if(veci>manji) {
+		for(i=0;i<manji;i++) {
+			pomPolje[i]=pomocnoPolje[i] + pomocnoPolje[pomocnoPolje.length-1];
+			
+		}
+		for(i=0;i<(veci-manji);i++) {
+			pomPolje[manji+i] = pomocnoPolje[manji+i];
+		}
+	}else {
+		for (i = 0; i < manji; i++) {
+			pomPolje[i] = pomocnoPolje[i] + pomocnoPolje[pomocnoPolje.length - i - 1];
+		}
+		for (i = 0; i < (veci - manji); i++) {
+			pomPolje[manji + i] = pomocnoPolje[manji + i];
+		}
+	}
+	
+	return znamenke(pomPolje);
 
-	    int brojac = 0;
-	    int[] novoPolje;
-	    if (duljinaPolja % 2 == 0) {
-	        duljinaPolja = duljinaPolja / 2;
-	        novoPolje = new int[duljinaPolja];
-	    } else {
-	        duljinaPolja = (duljinaPolja + 1) / 2;
-	        novoPolje = new int[duljinaPolja];
-	        novoPolje[duljinaPolja - 1] = polje[polje.length - 1];
-	    }
-	    int j = polje.length - 1;
-	    for (int i = 0; i < duljinaPolja; i++) {
-	        int sum = polje[i] + polje[j];
-	        if (sum >= 10) {
-	            int[] result = {sum / 10, sum % 10};
-	            novoPolje[i] = result[0];
-	            int[] tempPolje = Arrays.copyOf(novoPolje, novoPolje.length + 1);
-	            tempPolje[tempPolje.length - 1] = result[1];
-	            novoPolje = tempPolje;
-	        } else {
-	            novoPolje[i] = sum;
-	        }
-	        j = j - 2;
-	    }
-	    return zbrajanjeBrojeva(novoPolje.length, novoPolje);
-	} */
+
+} 
+	 
+
+public static int[] ljubavniKalkulator(int pomocnoPolje[]) {
 	
+	if(pomocnoPolje.length<=2) {
+		return pomocnoPolje;
+	}
+	
+	else {
+		if (pomocnoPolje.length % 2 == 0) {
+			int postupak[] = new int[(pomocnoPolje.length / 2)];
+			for (int i = 0; i < postupak.length; i++) {
+				postupak[i] = pomocnoPolje[i] + pomocnoPolje[(pomocnoPolje.length - 1 - i)];
+			}
+			if (postupak.length > 2) {
+				return ljubavniKalkulator(znamenke(postupak));
+			} else {
+				return ljubavniKalkulator(znamenke(postupak));
+			}
+		} else {
+			int postupak[] = new int[(pomocnoPolje.length / 2) + 1];
+			for (int i = 0; i < postupak.length; i++) {
+				postupak[i] = pomocnoPolje[i] + pomocnoPolje[pomocnoPolje.length - i - 1];
+				postupak[postupak.length - 1] = pomocnoPolje[pomocnoPolje.length / 2];
+
+			}
+			if (postupak.length > 2) {
+				return ljubavniKalkulator(znamenke(postupak));
+			} else
+				return ljubavniKalkulator(znamenke(postupak));
+		}
+
+	}
+	
+	
+}
+
 
 
 }
