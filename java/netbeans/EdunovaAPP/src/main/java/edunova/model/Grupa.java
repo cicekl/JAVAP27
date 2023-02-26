@@ -1,15 +1,22 @@
 package edunova.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Grupa extends Entitet{
 
 	private String naziv;
+        @ManyToOne
 	private Smjer smjer;
+        @ManyToOne
 	private Predavac predavac;
 	private Date datumPocetka;
+        @ManyToMany
 	private List<Polaznik> polaznici;
 	
 	public Grupa() {
