@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package edunova.util;
+
 import com.github.javafaker.Faker;
 import edunova.model.Grupa;
 import edunova.model.Polaznik;
@@ -18,10 +19,11 @@ import org.hibernate.Session;
 
 /**
  *
- * @author Lorena
+ * @author dell
  */
 public class PocetniInsert {
-     private static final int BROJ_SMJEROVA = 15;
+
+    private static final int BROJ_SMJEROVA = 15;
     private static final int BROJ_PREDAVACA = 7;
     private static final int BROJ_POLAZNIKA = 3000;
     private static final int BROJ_GRUPA = 220;
@@ -114,5 +116,5 @@ public class PocetniInsert {
     private int sb(int min, int max){
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
-    
+
 }
